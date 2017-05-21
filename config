@@ -163,6 +163,8 @@ exec --no-startup-id nm-applet
 
 exec --no-startup-id unity-settings-daemon
 
+exec --no-startup-id fluxgui
+
 # suspend
 bindsym $mod+Shift+s exec --no-startup-id systemctl suspend
 
