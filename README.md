@@ -13,4 +13,10 @@ if [ -f `which powerline-daemon` ]; then
   POWERLINE_BASH_SELECT=1
   . /usr/share/powerline/bindings/bash/powerline.sh
 fi
+
+touch_id=`xinput|egrep -i touchscreen|cut -d$'\t' -f 2|cut -d '=' -f 2`
+`xinput disable $touch_id`
+
+alias kbdlight_on='echo 2 | sudo tee /sys/class/leds/tpacpi\:\:kbd_backlight/brightness'
+alias kbdlight_off='echo 0 | sudo tee /sys/class/leds/tpacpi\:\:kbd_backlight/brightness'
 ```
