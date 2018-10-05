@@ -20,3 +20,12 @@ touch_id=`xinput|egrep -i touchscreen|cut -d$'\t' -f 2|cut -d '=' -f 2`
 alias kbdlight_on='echo 2 | sudo tee /sys/class/leds/tpacpi\:\:kbd_backlight/brightness'
 alias kbdlight_off='echo 0 | sudo tee /sys/class/leds/tpacpi\:\:kbd_backlight/brightness'
 ```
+intel_backlight solution
+in `/etc/X11xorg.conf`
+```
+  Section "Device"
+        Identifier  "Intel Graphics" 
+        Driver      "intel"
+        Option      "Backlight"  "intel_backlight"
+    EndSection
+```
